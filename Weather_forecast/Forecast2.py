@@ -8,7 +8,7 @@
 
 # 각종 필요한 것들 가져오기
 from keras.models import Sequential
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 from keras.layers import Dense
 from keras.callbacks import EarlyStopping
 
@@ -25,7 +25,7 @@ def load_model_except():
     answear = input("수치예보모델 불러오기 >");
 
     try:
-        Weather_Forecast_Mode_Local = load_model(answear);
+        Weather_Forecast_Mode_Local = load_model(answear, compile = False);
     except:
         print("파일열기 실패\n");
         Weather_Forecast_Mode_Local = -1;
