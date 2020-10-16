@@ -8,7 +8,8 @@ client_socket, address = server_socket.accept()
 print("Accepted connection from ", address)
 
 while True:
-    res = self.client_socket.recv(1024)
+    res = client_socket.recv(1024)
+#    res = self.client_socket.recv(1024)
     client_socket.send(res)
     if res == 'q':
         print ("Quit")
